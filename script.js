@@ -3,7 +3,7 @@
 
 //Managing the timer 
 //const creates permanent variable storing the default values
-const studyMinutes = 25;
+const studyMinutes = 50;
 const shortBreakMinutes = 5;
 const longBreakMinutes = 15;
 //using the let keyword to create variables that will be updated as the timer runs
@@ -112,3 +112,23 @@ function closeModal(){
 
 openModalBtn.addEventListener("click", openModal);
 closeModalBtn.addEventListener("click", closeModal);
+
+//Form Submission 
+//query selector searches the entire file and returns the first element 
+const taskInput = document.getElementById('task');
+const submit = document.getElementById('submit');
+const taskList = document.getElementById('taskList');
+
+submit.addEventListener('click', function(event){
+  event.preventDefault();
+  const taskText = taskInput.value.trim();
+  if(taskText !== ""){
+
+    const newTask = document.createElement('li');
+    newTask.className = "child";
+   
+    newTask.textContent = taskText;
+    taskList.appendChild(newTask);
+    taskInput.value = "";
+  }
+})
