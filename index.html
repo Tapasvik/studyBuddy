@@ -3,15 +3,36 @@
     <head>
         <meta charset="UTF-8">
         <title>Main Dashboard</title>
+         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <h1 id = "webHeader">Main Dashboard</h1>
+        <button class = "webHeader">POMO.</button>
+     <div class = "explanation">
+        <h1>productive tool to focus on your tasks</h1>
+    </div>
         <div id = "pomodoro">
-           <ul>
-                <li><a href = "timer.html">Pomodoro Timer</a></li>
-                <li><a href = "todo.html">To-Do List</a></li>
-           </ul> 
-          
-        </div>
+            <button id = "openBth">Keep in Mind</button>
+            <div id = "modal" class = "modalOverlay">
+                <div class = "modalBox">
+                    <h2 id = "modalText"> Click to start timer, Double-click to stop, Reset to start over. Remember to stay hydrated and take breaks. Happy productivity! </h2>
+                    <button id = "closeBtn" class = "modalClose">x</button>
+                </div>
+            </div>
 
+
+            <div class = "controls">
+                <div id = "group"><h1 id = "timer">25:00</h1>
+                <button onclick="setPomodoro()" ondblclick = "stopTimer()">Pomodoro</button>
+                <button onclick="setShortBreak()" ondblclick = "stopTimer()">Short Break</button>
+                <button onclick="setLongBreak()" ondblclick = "stopTimer()">Long Break</button>
+                <button onclick = "resetTimer()" >Reset Timer</button>
+             </div>
+                
+            </div>
+            
+                
+            
+        </div>
+        <script src="script.js"></script>
     </body>
+</html>
